@@ -1,0 +1,21 @@
+.App {
+  height: 100vh;
+  width: 100vw;
+  background-color: aquamarine;
+
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.myMapContainer {
+  grid-column: 1/4;
+  grid-row: 1/4;
+}
+
+#myMap {
+  height: 100%;
+  width: 100%;
+}
