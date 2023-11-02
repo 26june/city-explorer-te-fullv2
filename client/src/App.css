@@ -16,7 +16,7 @@
   height: 100%;
   width: 50%;
 
-  background-color: bisque;
+  background: linear-gradient(to left, transparent 0%, #242526 200%);
   z-index: 2;
 }
 
