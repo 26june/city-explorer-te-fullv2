@@ -10,7 +10,7 @@ app.use(cors());
 app.get("/", (req, res) => res.send("Welcome to my API!"));
 
 app.get("/weather", async (req, res) => {
-  let { lat = 35.7796, lon = -78.6382 } = req.query;
+  let { lat = 51.5073359, lon = -0.12765 } = req.query;
 
   const axiosRes =
     await axios.get(`https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${process.env.WEATHERBIT_MASTER_KEY}
