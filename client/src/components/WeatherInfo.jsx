@@ -25,8 +25,12 @@ export default function WeatherInfo({ currentSearch }) {
       WeatherInfo
       <div className="testText">
         <p>{currentData.city_name}</p>
-        <p>{currentData.temp}</p>
+        <p>{currentData.temp} C</p>
         <p>{currentData.weather?.description}</p>
+        <img
+          src={`../../public/icons/${currentData.weather?.icon}.png`}
+          alt="Weather Icon"
+        />
       </div>
     </div>
   );
