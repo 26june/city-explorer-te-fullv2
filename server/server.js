@@ -20,10 +20,9 @@ app.get("/weather", async (req, res) => {
 });
 
 app.get("/location", async (req, res) => {
-  //   let { lat = 35.7796, lon = -78.6382 } = req.query;
-  let search = "London";
+  let { locationSearch = "London" } = req.query;
 
-  const API = `https://eu1.locationiq.com/v1/search?q=${search}&key=${process.env.LOC_API_KEY}&format=json`;
+  const API = `https://eu1.locationiq.com/v1/search?q=${locationSearch}&key=${process.env.LOC_API_KEY}&format=json`;
 
   const axiosRes = await axios.get(API);
 
