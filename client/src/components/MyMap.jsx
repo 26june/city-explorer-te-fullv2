@@ -6,7 +6,7 @@ export default function MyMap({ currentSearch }) {
 
   function ChangeView({ lat, lon, zoom }) {
     const map = useMap();
-    map.setView([lat, lon], zoom);
+    map.flyTo([lat, lon], zoom, { animate: true });
     return null;
   }
 

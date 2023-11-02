@@ -33,6 +33,8 @@
   align-items: flex-end;
   font-size: 32px;
   color: white;
+  padding-top: 3vh;
+  padding-right: 3vw;
 }
 
 .myMapContainer {
@@ -52,4 +54,8 @@
   gap: 10px;
   font-size: 32px;
   color: white;
+}
+
+.WeatherInfo .testText {
+  transform: translateX(200%);
 }

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import anime from "animejs";
 
 export default function WeatherInfo({ currentSearch }) {
   const { lat, lon } = currentSearch;
 
-  const [currentData, setCurrentData] = useState({});
+  const [currentData, setCurrentData] = useState(null);
 
   useEffect(() => {
     async function getData() {
@@ -14,7 +15,17 @@ export default function WeatherInfo({ currentSearch }) {
       );
 
       setCurrentData(axiosRes.data.data[0]);
-      console.log(axiosRes.data.data[0]);
+
+      let animation = anime({
+        targets: ".WeatherInfo .testText",
+        translateX: [200, 0],
+        easing: "easeOutCubic",
+        duration: 2000,
+
+        complete: function (anim) {
+          animation.remove(".testText");
+        },
+      });
     }
 
     getData();
@@ -22,16 +33,17 @@ export default function WeatherInfo({ currentSearch }) {
 
   return (
     <div className="WeatherInfo">
-      WeatherInfo
-      <div className="testText">
-        <p>{currentData.city_name}</p>
-        <p>{currentData.temp} C</p>
-        <p>{currentData.weather?.description}</p>
-        <img
-          src={`../../public/icons/${currentData.weather?.icon}.png`}
-          alt="Weather Icon"
-        />
-      </div>
+      {currentData && (
+        <div className="testText">
+          <p>{currentData.city_name}</p>
+          <p>{currentData.temp} C</p>
+          <p>{currentData.weather?.description}</p>
+          <img
+            src={`./icons/${currentData.weather?.icon}.png`}
+            alt="Weather Icon"
+          />
+        </div>
+      )}
     </div>
   );
 }
