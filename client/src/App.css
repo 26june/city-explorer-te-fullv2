@@ -10,9 +10,20 @@
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
+.Search {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  height: 100%;
+  width: 50%;
+
+  background-color: bisque;
+  z-index: 2;
+}
+
 .myMapContainer {
   grid-column: 1/4;
   grid-row: 1/4;
+  z-index: 1;
 }
 
 #myMap {
