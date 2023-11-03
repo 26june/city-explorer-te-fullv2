@@ -36,9 +36,8 @@ app.get("/movies", async (req, res) => {
     url: `https://api.themoviedb.org/3/search/movie?query=${movieSearch}&include_adult=false&language=en-US&page=1`,
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZWExODFiNjQyNDdjMGEyNjMzYTVhYzYzMTQwMmNmNCIsInN1YiI6IjY1NDRkMzk2OWNjNjdiMDBjNDQyYWE0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aUGMA9p7neZ3PhKEviP5EugVcFpMRwQxDIzdK1mtfmI",
-    },
+      Authorization: `Bearer ${process.env.MOV_BEARER_KEY}`,
+    },MOV_BEARER_KEY
   };
 
   await axios
