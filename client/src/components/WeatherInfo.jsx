@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import anime from "animejs";
+import MovieInfo from "./MovieInfo";
 
 export default function WeatherInfo({ currentSearch }) {
   const { lat, lon } = currentSearch;
@@ -27,7 +28,6 @@ export default function WeatherInfo({ currentSearch }) {
         },
       });
     }
-
     getData();
   }, [currentSearch]);
 
@@ -42,6 +42,8 @@ export default function WeatherInfo({ currentSearch }) {
             src={`./icons/${currentData.weather?.icon}.png`}
             alt="Weather Icon"
           />
+
+          <MovieInfo currentSearch={currentData.city_name}></MovieInfo>
         </div>
       )}
     </div>

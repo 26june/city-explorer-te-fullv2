@@ -38,7 +38,7 @@ export default function Search({ currentSearch, setCurrentSearch }) {
         <input type="submit" />
       </form>
 
-      <div className="testText">
+      <div className="searchText">
         <p>{currentSearch.display_name}</p>
         <p>{currentSearch.lat}</p>
         <p>{currentSearch.lon}</p>
